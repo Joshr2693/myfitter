@@ -1,6 +1,6 @@
 # Fitter V1
 
-A responsive public marketplace prototype for finding trusted fitness coaches. The core journey is complete: homepage → coach search → search results → coach profile.
+A responsive marketplace for finding trusted fitness coaches. The current journey includes the homepage, coach search, profiles, booking and messaging demonstrations, client/coach dashboards, and Supabase-powered account registration and sign-in.
 
 ## Run locally
 
@@ -17,6 +17,13 @@ A responsive public marketplace prototype for finding trusted fitness coaches. T
 5. Confirm build command `npm run build` and output directory `dist`, then choose **Deploy**.
 6. Your temporary `*.vercel.app` address will be live in a minute or two.
 
+## Connect Supabase accounts
+
+1. In Vercel add `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` for Production, Preview and Development, then redeploy.
+2. In Supabase open **SQL Editor → New query**, paste the contents of `supabase/schema.sql`, and choose **Run**.
+3. In Supabase open **Authentication → URL Configuration**. Set the site URL to your live domain and add the same domain followed by `/**` as a redirect URL.
+4. Never put a Supabase secret or service-role key in Vercel under a `VITE_` name. The publishable key is the correct browser-safe key.
+
 ## Connect a custom domain
 
 1. In Vercel open the Fitter project, then **Settings → Domains**.
@@ -28,4 +35,4 @@ Every push to the GitHub repository will create a preview, and every push to the
 
 ## Scope note
 
-The current release uses realistic sample coach data and demonstrates the deployable public experience. Accounts, database persistence, messaging and real booking submission are intentionally the next product phase.
+Authentication and the secure initial database structure are ready. Coach listings, dashboard figures, messages and booking submission still use demonstration data while the next phase connects each screen to database records and adds administration/coach verification workflows.
